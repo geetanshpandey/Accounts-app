@@ -7,6 +7,15 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/main/navbaracounts';
 import { Plus, File } from 'lucide-react';  // Adjust the path as per your project structure
 import { Acme, Archivo_Black, Caveat, Bowlby_One } from 'next/font/google';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 const acme = Acme({ subsets: ['latin'], weight: ['400'] });
 const archivoBlack = Archivo_Black({ subsets: ['latin'], weight: ['400'] });
@@ -159,6 +168,25 @@ const Transaction = () => {
             </span>
           </p>
         </div>
+        <Table className='mt-8'>
+          <TableCaption>A list of your recent invoices.</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[100px]">Invoice</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Method</TableHead>
+              <TableHead className="text-right">Amount</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell className="font-medium">INV001</TableCell>
+              <TableCell>Paid</TableCell>
+              <TableCell>Credit Card</TableCell>
+              <TableCell className="text-right">$250.00</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </main>
     </div>
   );
