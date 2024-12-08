@@ -7,6 +7,16 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/main/navbaracounts';
 import { Plus, File } from 'lucide-react';  // Adjust the path as per your project structure
 import { Acme, Archivo_Black, Caveat, Bowlby_One } from 'next/font/google';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { ArrowUpDown } from "lucide-react";
 
 const acme = Acme({ subsets: ['latin'], weight: ['400'] });
 const archivoBlack = Archivo_Black({ subsets: ['latin'], weight: ['400'] });
@@ -79,6 +89,21 @@ const Transaction = () => {
             <span className={`${caveat.className} text-3xl font-bold`}>Numbers speak louder than words.</span>
           </p>
         </div>
+        <Table className='mt-8 '>
+          <TableCaption>A list of your recent invoices.</TableCaption>
+          <TableHeader>
+            <TableRow >
+              <TableHead ><span className='flex'>Date <ArrowUpDown className="w-5 h-5 ml-2" /></span></TableHead>
+              <TableHead ><span className='flex'>Category  <ArrowUpDown className="w-5 h-5 ml-2" /></span></TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell className="font-medium">INV001</TableCell>
+              <TableCell>Paid</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </main>
     </div>
   );

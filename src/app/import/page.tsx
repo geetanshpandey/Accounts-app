@@ -24,7 +24,7 @@ const archivoBlack = Archivo_Black({ subsets: ['latin'], weight: ['400'] });
 const caveat = Caveat({ subsets: ['latin'], weight: ['400', '700'] });
 const bowlbyOne = Bowlby_One({ subsets: ['latin'], weight: ['400'] });
 
-const Transaction = () => {
+const Import = () => {
   const [name, setName] = useState('');
   const [transactionType, setTransactionType] = useState('income'); // New state for transaction type
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -58,19 +58,19 @@ const Transaction = () => {
 
             <DialogContent className="p-6 transform scale-95">
                 <DialogHeader>
-                <DialogTitle className="text-center text-blue-600 text-2xl font-bold pt-4"><span className={`${caveat.className}`}>Add Transactions</span></DialogTitle>
+                <DialogTitle className="text-center text-blue-600 text-2xl font-bold pt-4"><span className={`${caveat.className}`}>Add Imports</span></DialogTitle>
                 </DialogHeader>
 
                 <div className="flex flex-col gap-4 mt-4">
                 {/* Transaction Heading */}
                 <div>
-                    <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300">Transaction Details</h2>
+                    <h2 className="text-lg font-semibold text-gray-700 dark:text-gray-300">Import Details</h2>
                 </div>
 
                 {/* Transaction Type Dropdown */}
                 <div>
                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Transaction Type
+                    Import Type
                     </label>
                     <select
                     value={transactionType}
@@ -162,11 +162,11 @@ const Transaction = () => {
         {/* Centered Heading and Subheading */}
         <div className="flex flex-col items-center justify-center text-center mt-20">
           <h1 className="text-5xl font-bold text-blue-600 mb-4">
-            <span className={`${caveat.className}`}>Transactions</span>
+            <span className={`${caveat.className}`}>Imports</span>
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300">
             <span className={`${caveat.className} text-3xl font-bold`}>
-              Manage your transaction effortlessly.
+              Manage your Imports effortlessly.
             </span>
           </p>
         </div>
@@ -196,4 +196,4 @@ const Transaction = () => {
   );
 };
 
-export default Transaction;
+export default Import;
